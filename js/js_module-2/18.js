@@ -7,8 +7,9 @@ function calculateTotal(number) {
   // Пиши код ниже этой строки
 
 let sumNumber = 0;
-    for (i=0; i<=number; i+=1) {
-      sumNumber +=i;}
+    for (let i=0; i<=number; i+=1) {
+      sumNumber += i;
+    }
 return sumNumber;
 
   // Пиши код выше этой строки
