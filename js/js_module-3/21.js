@@ -1,18 +1,27 @@
-// Lesson 21
+// Lesson 21  !!!Деструктуризация объектов!!!
 
-// Функция isNumberInRange(start, end, number) проверяет, входит ли число в промежуток. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+// Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
 
-// number - число, вхождение которого проверяется
-// start - начало числового промежутка
-// end - конец числового промежутка
-// Присвой переменной isInRange выражение проверки вхождения number в числовой промеждуток от start до end. То есть число должно быть больше либо равно start и меньше либо равно end. Результатом выражения проверки будет буль true или false.
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Пиши код ниже этой строки
 
-function isNumberInRange(start, end, number) {
-  const isInRange = number > start && number < end; // Complete this line
+// const yesterday = highTemperatures.yesterday;
+// const today = highTemperatures.today;
+// const tomorrow = highTemperatures.tomorrow;
 
-  return isInRange;
-}
-console.log(isNumberInRange(10, 30, 17));
-console.log(isNumberInRange(10, 30, 5));
-console.log(isNumberInRange(20, 50, 24));
-console.log(isNumberInRange(20, 50, 76));
+// // Пиши код выше этой строки
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Пиши код ниже этой строки
+const { yesterday, today, tomorrow } = highTemperatures;
+// Пиши код выше этой строки
+const meanTemperature = (yesterday + today + tomorrow) / 3;

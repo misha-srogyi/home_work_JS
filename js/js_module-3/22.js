@@ -1,10 +1,14 @@
-// Lesson 22
-// Функция checkIfCanAccessContent(subType) проверяет, может ли пользователь получить доступ к контенту. Проверка происходит по типу подписки. Получить доступ могут только пользователи с подпиской pro или vip.
+// Lesson 22 !!Значения по умолчанию!!
+// В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
 
-// Присвой переменной canAccessContent выражение проверки подписки. Если значение параметра subType равно строкам 'pro' или 'vip', пользователь получит доступ. Результатом выражения проверки будет буль true или false.
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Пиши код ниже этой строки
 
-function checkIfCanAccessContent(subType) {
-  const canAccessContent = subType === 'pro' || subType === 'vip'; // Complete this line
 
-  return canAccessContent;
-}
+const {yesterday, today, tomorrow, icon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'} = highTemperatures;
+// Пиши код выше этой строки
+const meanTemperature = (yesterday + today + tomorrow) / 3;

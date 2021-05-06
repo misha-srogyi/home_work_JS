@@ -10,13 +10,16 @@ const products = [
 
 function getProductPrice(productName) {
   // Пиши код ниже этой строки
-  let productPrice = 0;
+  let ourPrice = 0;
   for (const product of products) {
-    console.log(product);
+    // console.log(product);
+    if (product.name === productName) {
+      ourPrice = product.price;
+      return ourPrice;
+    }
+   // Пиши код выше этой строки
   }
-  
-  return productPrice;
-  // Пиши код выше этой строки
+  return null;
 }
 console.log(getProductPrice('Радар'));
 console.log(getProductPrice('Двигатель'));

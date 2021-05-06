@@ -1,23 +1,28 @@
-// Lesson 19
+// Lesson 19   !!Задача. Коллекция значений свойства!!
 
-// Функция checkPassword(password) получает пароль пользователя в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+// Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
 
-// Если значение параметра password равно null, значит пользователь отменил операцию и в message записывается строка 'Canceled by user!'.
-// Если значение параметра password совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка 'Welcome!'.
-// Если ни одно из предыдущих условий не выполнилось, в переменную message записывается строка 'Access denied, wrong password!'.
+const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 9 },
+];
 
-function checkPassword(password) {
-  const ADMIN_PASSWORD = 'jqueryismyjam';
-  let message;
-
-  if (password===null) { // Complete this line
-    message =  'Canceled by user!';
-  } else if (password===ADMIN_PASSWORD) { // Complete this line
-    message = 'Welcome!';
-  } else {
-    message = 'Access denied, wrong password!';
-  }
-
-  return message;
+function getAllPropValues(propName) {
+  // Пиши код ниже этой строки
+  let value = [];
+  for (const product of products) {
+    if (product[propName]) {
+      // console.log(product[propName]);
+      value.push(product[propName]);
+      }
+    }
+  
+  return value;
+  // Пиши код выше этой строки
 }
-
+console.log(getAllPropValues('name'));
+console.log(getAllPropValues('price'));
+console.log(getAllPropValues('quantity'));
+console.log(getAllPropValues('category'));

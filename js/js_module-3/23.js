@@ -1,20 +1,22 @@
-// Lesson 23
+// Lesson 23 !!!Изменение имени переменной!!!
 
-// Функция isNumberNotInRange(start, end, number) проверяет, не входит ли число в промежуток. То есть число должно быть меньше либо равно start и больше либо равно end. Результатом выражения проверки будет буль true или false.
+// Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
 
-// Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// const highYesterday = highTemperatures.yesterday;
+// const highToday = highTemperatures.today;
+// const highTomorrow = highTemperatures.tomorrow;
+// const highIcon = highTemperatures.icon;
 
-// number - число, не вхождение которого проверяется
-// start - начало числового промежутка
-// end - конец числового промежутка
-// Присвой переменной isNotInRange выражение инверсии значения переменной isInRange используя оператор !.
-
-function isNumberNotInRange(start, end, number) {
-  const isInRange = number >= start && number <= end;
-  const isNotInRange = !isInRange  ; // Complete this line
-
-  return isNotInRange;
-}
-console.log(isNumberNotInRange(10, 30, 17));
-console.log(isNumberNotInRange(10, 30, 5));
-console.log(isNumberNotInRange(20, 50, 24));     console.log(isNumberNotInRange(20, 50, 76));
+// Пиши код ниже этой строки
+const { yesterday: highYesterday,
+  today: highToday,
+  tomorrow: highTomorrow,
+  icon: highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
+  } = highTemperatures;
+// Пиши код выше этой строки
+const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;

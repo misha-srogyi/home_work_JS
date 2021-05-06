@@ -1,17 +1,33 @@
-// Lesson 26
+// Lesson 26  !!Паттерн «Объект настроек»!!
 
-// Функция checkPassword(password) сравнивает переданный ей пароль (параметр password) с сохранённым паролем администратора (константа ADMIN_PASSWORD) и возвращает строку с сообщением о результате.
+// Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата.
 
-// Используя тернарный оператор дополни функцию так, что:
+// {
+//   today: { low: 10, high: 20 },
+//   tomorrow: { low: 20, high: 30 }
+// }
+// Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
 
-// Если значения password и ADMIN_PASSWORD совпадают, присвой переменной message строку 'Access is allowed'.
-// В противном случае, присвой message строку 'Access denied, wrong password!'.
+// Пиши код ниже этой строки
+// function calculateMeanTemperature(forecast) {
+//   const todayLow = forecast.today.low;
+//   const todayHigh = forecast.today.high;
+//   const tomorrowLow = forecast.tomorrow.low;
+//   const tomorrowHigh = forecast.tomorrow.high;
 
-function checkPassword(password) {
-  const ADMIN_PASSWORD = 'jqueryismyjam';
-  let message;
-  // Write your code under this line
-message = ADMIN_PASSWORD === password ? 'Access is allowed' : 'Access denied, wrong password!';
-  // Write your code above this line
-  return message;
+//   // Пиши код выше этой строки
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+//------------
+
+// Пиши код ниже этой строки
+function calculateMeanTemperature(forecast) {
+  const { today: { low: todayLow, high: todayHigh },
+    tomorrow: { low: tomorrowLow, high: tomorrowHigh }
+  } = forecast;
+
+  // Пиши код выше этой строки
+  return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
 }
+
+console.log(calculateMeanTemperature({ today: { low: 28, high: 32 }, tomorrow: { low: 25, high: 29 } }));//28.5

@@ -1,23 +1,27 @@
-// Lesson 20
+// Lesson 20 !!!Задача. Общая стоимость товара!!!
 
-// Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
+// Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
 
-// available - доступное количество товаров на складе
-// ordered - единиц товара в заказе
-// Используя ветвления дополни код функции так, что:
+const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 9 },
+];
 
-// Если в заказе еще нет товаров, то есть значение параметра ordered равно 0, в переменную message присваивается строка There are no products in the order yet.
-// Eсли товаров в заказе больше чем доступно товаров на складе, то в переменную message присваивается строка 'The order is too large, there are not enough items in stock!'.
-// В противном случае в переменную message присваевается строка 'The order is placed, the manager will contact you'.
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+  let totalCost = 0;
+  for (const product of products) {
+    console.log(product);
+    if (product.name === productName) {
+      totalCost = product.price * product.quantity
+    }
+  }
+  return totalCost;
 
-function checkStorage(available, ordered) {
-  let message;
-  // Write your code under this line
-if ( ordered === 0 )
-{ message = 'There are no products in the order yet';}
-  else if ( ordered > available )
-  { message = 'The order is too large, there are not enough items in stock!';}
-  else { message = 'The order is placed, the manager will contact you';}
-  // Write your code above this line
-  return message;
+  // Пиши код выше этой строки
 }
+console.log(calculateTotalPrice('Бластер'));
+console.log(calculateTotalPrice('Радар'));
+console.log(calculateTotalPrice('Дроид'));

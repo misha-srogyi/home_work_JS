@@ -1,38 +1,58 @@
-// Lesson 24
+// Lesson 24  !!Деструктуризация в циклах!!
 
-// Функция getDiscount(totalSpent) определяет значение скидки в зависимости от общей суммы потраченных денег (параметр totalSpent) в магазине за всё время (партнёрская программа). Скидка записывается в переменную discount и возвращается из функции как результат её работы.
+// Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+//------------------
 
-// Используя ветвления и логические операторы, дополни код функции.
+// const books = [
+//   {
+//     title: 'Последнее королевство',
+//     author: 'Бернард Корнуэлл',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'На берегу спокойных вод',
+//     author: 'Роберт Шекли',
+//     rating: 8.51,
+//   },
+// ];
 
-// Если потрачено от 50000 ( включительно ) или больше кредитов - скидка 10% (золотой партнёр)
-// Если потрачено от 20000 (включительно) до 50000 кредитов - скидка 5% (серебрянный партнёр)
-// Если потрачено от 5000 (включительно) до 20000 кредитов - скидка 2% (бронзовый партнёр)
-// Если потрачено меньше чем 5000 кредитов - скидка 0 (базовый партнёр)
-// Значения скидок каждого уровня хранятся в одноимённых константах BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT и GOLD_DISCOUNT.
+// for (const book of books) {
+//   console.log(book.title);
+//   console.log(book.author);
+//   console.log(book.rating);
+// }
 
-function getDiscount(totalSpent) {
-  const BASE_DISCOUNT = 0;
-  const BRONZE_DISCOUNT = 0.02;
-  const SILVER_DISCOUNT = 0.05;
-  const GOLD_DISCOUNT = 0.1;
-  let discount;
-  // Write your code under this line
-if ( totalSpent >= 50000)
-{ discount = GOLD_DISCOUNT;}
-  else if ( totalSpent >= 20000 && totalSpent < 50000)
-  { discount = SILVER_DISCOUNT ;}
-  else if ( totalSpent >= 5000 && totalSpent < 20000)
-  { discount = BRONZE_DISCOUNT ;}
-  else if ( totalSpent < 5000 )
-  { discount = BASE_DISCOUNT ; }
-  // Write your code above this line
-  return discount;
+//-----------------Деструктиризація
+
+// for (const book of books) {
+//   const { title, author, rating } = book;
+
+//   console.log(title);
+//   console.log(author);
+//   console.log(rating);
+// }
+
+//-------------------Деструктиризація
+
+// for (const { title, author, rating } of books) {
+//   console.log(title);
+//   console.log(author);
+//   console.log(rating);
+// }
+//-------------------
+
+const colors = [
+  { hex: '#f44336', rgb: '244,67,54' },
+  { hex: '#2196f3', rgb: '33,150,243' },
+  { hex: '#4caf50', rgb: '76,175,80' },
+  { hex: '#ffeb3b', rgb: '255,235,59' },
+];
+
+const hexColors = [];
+const rgbColors = [];
+// Пиши код ниже этой строки
+
+for (const { hex, rgb } of colors) {
+  hexColors.push(hex);
+  rgbColors.push(rgb);
 }
-
-console.log(getDiscount(137000));
-console.log(getDiscount(46900));
-console.log(getDiscount(8250));
-console.log(getDiscount(1300));
-console.log(getDiscount(5000));
-console.log(getDiscount(20000));
-console.log(getDiscount(50000));

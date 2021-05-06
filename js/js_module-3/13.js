@@ -29,7 +29,7 @@ const values = [];
 // Пиши код ниже этой строки
 const keys = Object.keys(apartment);
 for (const key of keys) {
-   values.push(apartment[key]);
+  values.push(apartment[key]);
 //    break;
 }
 
