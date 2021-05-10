@@ -1,21 +1,16 @@
-// Lesson 31
+// Lesson 31  !!Операция rest для сбора всех аргументов функции!!
 
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим элементам или свойствам строки в переменной course.
+// Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму
 
-// courseTopicLength - длина строки.
-// firstElement - первый символ строки.
-// lastElement - последний символ строки.
-
-const courseTopic = 'JavaScript for beginners';
-// Write your code under this line
-const courseTopicLength = courseTopic.length;
-const firstElement = courseTopic[0];
-const lastElement = courseTopic[courseTopic.length -1];
-
-
-console.log(courseTopicLength);
-console.log(firstElement);
-console.log(lastElement);
-
-
-// Write your code above this line
+// Пиши код ниже этой строки
+function add(...args) {
+  let sum = 0;
+    for (let i = 0; i < args.length; i++) {
+        sum += args[i];
+    }
+    
+    return sum;
+  // Пиши код выше этой строки
+}
+console.log(add(15, 27));
+console.log(add(12, 4, 11, 48));

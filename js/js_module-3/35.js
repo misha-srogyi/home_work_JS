@@ -1,15 +1,41 @@
-// Lesson 35
+// Lesson 35  !!Доступ к свойствам объекта в его методах!!
 
-// Функция checkName(fullname, name) принимает два параметра и возвращает буль true или false - результат проверки вхождения подстроки name в строку fullname.
+// Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент.
 
-// fullname - полное имя состоящее из двух слов (имени и фамилии) разделённых пробелом.
-// name - имя для проверки вхождения в полное имя.
-// Присвой переменной result выражение проверки вхождения имени (параметр name), в полное имя (параметр fullname). Пусть функция строго относится к регистру букв, то есть «Петя» и «петя» для неё разные имена.
+//-----------------
 
-function checkForName(fullName, name) {
- const result = fullName.includes(name) ; // Complete this line
-  return result;
-}
-console.log(checkForName('Egor Kolbasov', 'Egor'));
-console.log(checkForName('Egor Kolbasov', 'egor'));
-console.log(checkForName('Egor Kolbasov', 'Zhenya'));
+// const bookShelf = {
+//   books: ['Последнее королевство'],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName);
+//   },
+//   removeBook(bookName) {
+//     const bookIndex = this.books.indexOf(bookName);
+//     this.books.splice(bookIndex, 1);
+//   },
+// };
+
+// console.log(bookShelf.getBooks()); // []
+// bookShelf.addBook('Мгла');
+// bookShelf.addBook('Страж снов');
+// console.log(bookShelf.getBooks()); // ['Последнее королевство', 'Мгла', 'Страж снов']
+// bookShelf.removeBook('Мгла');
+// console.log(bookShelf.getBooks());// ['Последнее королевство', 'Страж снов']
+
+//---------------
+
+const bookShelf = {
+  books: ['Последнее королевство', 'Мгла', 'Страж снов'],
+  updateBook(oldName, newName) {
+    // Пиши код ниже этой строки
+    const indexBook = this.books.indexOf(oldName);
+    this.books.splice(indexBook, 1, newName);
+
+  },
+    // Пиши код выше этой строки
+  
+};
+console.log(bookShelf.updateBook('Последнее королевство', 'Дюна'));

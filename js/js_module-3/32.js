@@ -1,22 +1,18 @@
-// Lesson 32
+// Lesson 32  !!Операция rest для сбора части аргументов функции!!
 
-// Функция getSubstring(string, length) принимает строку и возвращает подстроку от начала и до length символов. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+// Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции.
 
-// string - оригинальная строка
-// length - количество символов с начала строки для подстроки
-// Присвой переменной substring выражение создания подстроки длинной length символов (от начала) из строки string.
+// Пиши код ниже этой строки
+function addOverNum(...args) {
+  let total = 0;
 
-function getSubstring(string, length) {
-    const substring = 'Hello world'.slice(0, length) ; // Complete this line
+    for (const arg of args) {
+      if (args[0] < arg)
+    total += arg;
+  }
 
-    return substring;
+  return total;
+  // Пиши код выше этой строки
 }
-console.log(getSubstring('Hello world', 3)); //'Hel'
-
-
-
-// const productName = 'Ремонтный дроид';
-// console.log(productName.slice(0, 4)); // 'Ремо'
-// console.log(productName.slice(3, 9)); // 'онтный'
-// console.log(productName.slice(0, productName.length)); // 'Ремонтный дроид'
-// console.log(productName.slice(10, productName.length)); // 'дроид'
+console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));//71
+console.log(addOverNum(50, 15, 27));//0

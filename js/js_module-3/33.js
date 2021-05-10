@@ -1,28 +1,23 @@
-// Lesson33
+// Lesson33  !!Задача. Массив совпадений!!
 
-// Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+// Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
 
-// Дополни код функции так, что если длина строки:
+// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
 
-// не превышает maxLength, функция возвращает её в исходном виде.
-// больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие '...', после чего возвращает укороченную версию.
+// Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента.
 
-
-function formatMessage(message, maxLength) {
-  let result;
-// Write your code under this line
-  if (message.length <= maxLength)
-    {
-      result = message;
+// Пиши код ниже этой строки
+function findMatches(arr, ...args) {
+  const matches = []; // Не изменяй эту строку
+  for (const arg of args) {
+    if (arr.includes(arg)) {
+      matches.push(arg);
     }
-    else {
-        result = message.slice(0, maxLength) + '...';
-        return result;
-    }
-// Write your code above this line
-  return result;
+  
+    
+  }
+  // Пиши код выше этой строки
+  return matches;
 }
-console.log(formatMessage('Curabitur ligula sapien', 16));
-console.log(formatMessage('Curabitur ligula sapien', 23));
-console.log(formatMessage('Vestibulum facilisis purus nec', 20));
-
+console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));

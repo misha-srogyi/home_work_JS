@@ -1,9 +1,28 @@
-// Lesson 34
+// Lesson 34  !!Методы объекта!!
 
-// Функция normalizeInput(input) принимает строку (параметр input) и возвращает такую же строку, но в нижнем регистре. Присвой переменной normalizedInput выражение создания строки в нижнем регистре из параметра input.
+// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
 
-function normalizeInput(input) {
-  const normalizedInput = input.toLowerCase(); 
-  return normalizedInput;
-}
-console.log(normalizeInput('Hello world')); //hello world
+// Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку 'Удаляем книгу <имя книги>', где <имя книги> это значение параметра bookName.
+
+// Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку 'Обновляем книгу <старое имя> на <новое имя>', где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно.
+
+const bookShelf = {
+  // Пиши код ниже этой строки
+  books: ['Последнее королевство', 'Страж снов'],
+  getBooks() {
+    return 'Возвращаем все книги';
+  },
+  addBook(bookName) {
+    return `Добавляем книгу ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Удаляем книгу ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Обновляем книгу ${oldName} на ${newName}`;
+  }
+  
+  // Пиши код выше этой строки
+};
+
+// console.log(bookShelf.updateBook('Страж снов', 'hello'));
