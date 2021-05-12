@@ -20,29 +20,37 @@ const atTheOldToad = {
     return this.potions;
   },
   addPotion(potionName) {
-    if (this.potions.includes(potionName)) {
+   if (this.potions.includes(potionName)) {
       return `Зелье ${potionName} уже есть в инвентаре!`;
     }
 
     this.potions.push(potionName);
+
   },
   removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
+    for (let i = 0; i < this.potions.length; i += 1) {
+    
+      const potionIndex = this.potions[i];
 
-    if (potionIndex === -1) {
-      return `Зелья ${potionName} нет в инвентаре!`;
+      if (potionIndex.name === potionName) {
+        this.potions.splice(i, 1);
+        return this.potions;
+      }
+      
     }
-
-    this.potions.splice(potionIndex, 1);
+    return `Зелья ${potionName} нет в инвентаре!`;
   },
   updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
 
-    if (potionIndex === -1) {
-      return `Зелья ${oldName} нет в инвентаре!`;
+    for (let potion of this.potions) {
+
+      if (potion['name'] === oldName) {
+        potion['name'] = newName;
+      }
     }
-
-    this.potions.splice(potionIndex, 1, newName);
+    return `Зелья ${oldName} нет в инвентаре!`;
   },
   // Пиши код выше этой строки
 };
+console.log(atTheOldToad.getPotions());
+console.log(atTheOldToad.addPotion({ name: 'Невидимка', price: 620 }));
