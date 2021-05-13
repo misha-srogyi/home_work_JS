@@ -12,8 +12,25 @@ function makePizza(pizzaName) {
 // Пиши код ниже этой строки
 function makeMessage(pizzaName,callback) {
   
-  callback(makePizza, deliverPizza);
-  return callback;
+  callback(pizzaName);
+  return callback(pizzaName);
 }
 console.log(makeMessage('Роял гранд', makePizza));
 console.log(makeMessage('Ультрасыр', deliverPizza));
+
+//-----------------
+
+
+// const fnB = function (number) {
+//   console.log('виклик fnB', number);
+// }
+
+// const fnA = function (message, callback) {
+//   console.log(message);
+
+//   console.log(callback);
+
+//   callback(100);
+// }
+// // fnA('gwegee', fnB);
+// console.log(fnA('виклик fnB', fnB))

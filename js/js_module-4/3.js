@@ -1,23 +1,17 @@
-// Lesson 3  !!Доступ к свойствам через точку!!
+// Lesson 3  !!Инлайн-колбэки!!
 
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
+// Дополни второй вызов функции makePizza(pizzaName, callback), передав вторым аргументом инлайн колбэк-функцию eatPizza(pizzaName), которая логирует строку 'Едим пиццу <имя пиццы>'.
 
-// aptRating - рейтинг;
-// aptDescr - описание;
-// aptPrice - цена;
-// aptTags - теги.
+function makePizza(pizzaName, callback) {
+  console.log(`Пицца ${pizzaName} готовится, ожидайте...`);
+  callback(pizzaName);
+}
 
-const apartment = {
-    imgUrl: 'https://via.placeholder.com/640x480',
-    descr: 'Просторная квартира в центре',
-    rating: 4,
-    price: 2153,
-    tags: ['premium', 'promoted', 'top'],
-  };
-  
-  // Пиши код ниже этой строки
-  const aptRating = apartment.rating;
-  const aptDescr = apartment.descr;
-  const aptPrice = apartment.price;
-  const aptTags = apartment.tags;
-  // Пиши код выше этой строки
+makePizza('Роял гранд', function deliverPizza(pizzaName) {
+  console.log(`Доставляем пиццу ${pizzaName}.`);
+});
+// Пиши код ниже этой строки
+
+makePizza('Ультрасыр', function eatPizza(pizzaName) {
+console.log(`Едим пиццу ${pizzaName}`);
+});

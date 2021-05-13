@@ -1,23 +1,22 @@
-//Lesson 5  !!Доступ к свойствам через квадратные скобки!!
+//Lesson 5  !!Контекст вызова функции!!
 
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment используя синтаксис «квадратных скобок».
+// Выполни рефакторинг методов объекта pizzaPalace, расставив отсутствующие this в местах обращения к свойствам и методам объекта.
 
-// aptRating - рейтинг;
-// aptDescr - описание;
-// aptPrice - цена;
-// aptTags - теги.
+const pizzaPalace = {
+  pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+  // Пиши код ниже этой строки
+  checkPizza(pizzaName) {
+    return this.pizzas.includes(pizzaName);
+  },
+  order(pizzaName) {
+    const isPizzaAvailable = this.checkPizza(pizzaName);
 
-const apartment = {
-  imgUrl: 'https://via.placeholder.com/640x480',
-  descr: 'Просторная квартира в центре',
-  rating: 4,
-  price: 2153,
-  tags: ['premium', 'promoted', 'top'],
+    if (!isPizzaAvailable) {
+      return `В ассортименте нет пиццы с названием «${pizzaName}».`;
+    }
+
+    return `Заказ принят, готовим пиццу «${pizzaName}».`;
+  },
+  // Пиши код выше этой строки
 };
-
-// Пиши код ниже этой строки
-const aptRating = apartment['rating'];
-const aptDescr = apartment['descr'];
-const aptPrice = apartment['price'];
-const aptTags = apartment['tags'];
-// Пиши код выше этой строки
+console.log(pizzaPalace.order('Аль Копчино'));

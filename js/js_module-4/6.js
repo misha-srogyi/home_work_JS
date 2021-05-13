@@ -1,34 +1,36 @@
-//Lesson 6  !!Изменение значения свойства!!
+//Lesson 6  !!Задача. Аккаунт пользователя!!
 
-// Дополни код обновив значения свойств объекта apartment:
+// Перед увольнением разработчик сломал исходный код управления аккаунтами пользователей нашего сервиса доставки еды. Выполни рефакторинг методов объекта customer, расставив отсутствующие this при обращении к свойствам объекта.
 
-// цену в свойстве price на 5000;
-// рейтинг квартиры в свойстве rating на 4.7;
-// имя владельца во вложенном свойстве name на 'Генри Сибола';
-// массив тегов в свойстве tags добавив в конец строку 'trusted'.
-// Тесты
-// Объявлена переменная apartment.
-// Значение переменной apartment это объект.
-// Значение вложенного свойства price это число 5000.
-// Значение вложенного свойства rating это число 4.7.
-// Значение вложенного свойства name это строка 'Генри Сибола'.
-// Значение вложенного свойства tags это массив ['premium', 'promoted', 'top', 'trusted'].
+// После объявления объекта мы добавили вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
 
-const apartment = {
-  imgUrl: 'https://via.placeholder.com/640x480',
-  descr: 'Просторная квартира в центре',
-  rating: 4,
-  price: 2153,
-  tags: ['premium', 'promoted', 'top'],
-  owner: {
-    name: 'Генри',
-    phone: '982-126-1588',
-    email: 'henry.carter@aptmail.com'
-  }
+const customer = {
+  username: 'Mango',
+  balance: 24000,
+  discount: 0.1,
+  orders: ['Burger', 'Pizza', 'Salad'],
+  // Пиши код ниже этой строки
+  getBalance() {
+    return this.balance;
+  },
+  getDiscount() {
+    return this.discount;
+  },
+  setDiscount(value) {
+    this.discount = value;
+  },
+  getOrders() {
+    return this.orders;
+  },
+  addOrder(cost, order) {
+    this.balance -= cost - cost * this.discount;
+    this.orders.push(order);
+  },
+  // Пиши код выше этой строки
 };
 
-// Пиши код ниже этой строки
-apartment.price = 5000;
-apartment.rating = 4.7;
-apartment.owner.name = 'Генри Сибола';
-apartment.tags.push('trusted'); 
+customer.setDiscount(0.15);
+console.log(customer.getDiscount()); // 0.15
+customer.addOrder(5000, 'Steak');
+console.log(customer.getBalance()); // 19750
+console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak'] 
