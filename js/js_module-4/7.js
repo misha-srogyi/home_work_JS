@@ -16,6 +16,19 @@ const orders = [
 ];
 
 // Пиши код ниже этой строки
-function composeMessage(position) {}
+function composeMessage(position) {
+  return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position + 1}-й в очереди.`
+}
 
 const messages = [];
+  
+// for (const order of orders) {
+//   const position = orders.indexOf(order) + 1;
+//   messages.push(composeMessage.call(order, position))
+// }
+for (let i = 0; i < orders.length; i+=1) {
+    const message = composeMessage.call(orders[i], i);
+    messages.push(message);
+}
+
+console.log(messages);
