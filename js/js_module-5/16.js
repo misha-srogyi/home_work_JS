@@ -9,6 +9,14 @@
 class Car {
   static #MAX_PRICE = 50000;
   // Пиши код ниже этой строки
+  static checkPrice(price) {
+    if (price > Car.#MAX_PRICE) {
+      return 'Внимание! Цена превышает допустимую.';
+    }
+    else {
+      return 'Всё хорошо, цена в порядке.';
+    }
+  }
 
   // Пиши код выше этой строки
   constructor({ price }) {

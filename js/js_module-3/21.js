@@ -1,27 +1,8 @@
-// Lesson 21  !!!Деструктуризация объектов!!!
+// Lesson 21  !!Задача. Список друзей!!
 
-// Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
 
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
-// };
-// // Пиши код ниже этой строки
-
-// const yesterday = highTemperatures.yesterday;
-// const today = highTemperatures.today;
-// const tomorrow = highTemperatures.tomorrow;
-
-// // Пиши код выше этой строки
-// const meanTemperature = (yesterday + today + tomorrow) / 3;
-
-const highTemperatures = {
-  yesterday: 28,
-  today: 26,
-  tomorrow: 33,
+const getFriends = (users) => {
+  const allFriends = users.flatMap(user => user.friends);
+    return allFriends.filter((friends, index, users) => users.indexOf(friends) === index)
 };
-// Пиши код ниже этой строки
-const { yesterday, today, tomorrow } = highTemperatures;
-// Пиши код выше этой строки
-const meanTemperature = (yesterday + today + tomorrow) / 3;
