@@ -15,10 +15,10 @@ const books = [
 ];
 // Пиши код ниже этой строки
 
-const sortedByAuthorName = books;
+const sortedByAuthorName = [...books].sort((firstAuthor, secondAuthor) => firstAuthor.author.localeCompare(secondAuthor.author));
 
-const sortedByReversedAuthorName = books;
+const sortedByReversedAuthorName = [...books].sort((firstAuthor, secondAuthor) => secondAuthor.author.localeCompare(firstAuthor.author));
 
-const sortedByAscendingRating = books;
+const sortedByAscendingRating = [...books].sort((firstRating, secondRating) => firstRating.rating - secondRating.rating);
 
-const sortedByDescentingRating = books;
+const sortedByDescentingRating = [...books].sort((firstRating, secondRating) => secondRating.rating - firstRating.rating);
