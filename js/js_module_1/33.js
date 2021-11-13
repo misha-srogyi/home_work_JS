@@ -17,7 +17,7 @@ function formatMessage(message, maxLength) {
     }
     else {
         result = message.slice(0, maxLength) + '...';
-        return result;
+      
     }
 // Write your code above this line
   return result;

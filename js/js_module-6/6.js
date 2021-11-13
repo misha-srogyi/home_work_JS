@@ -23,3 +23,5 @@ const calculateTotalPrice = (orderedItems) => {
   return totalPrice;
 }
 // Пиши код выше этой строки
+
+

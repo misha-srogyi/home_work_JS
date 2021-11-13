@@ -34,3 +34,25 @@ console.log(customer.getDiscount()); // 0.15
 customer.addOrder(5000, 'Steak');
 console.log(customer.getBalance()); // 19750
 console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak'] 
+
+// !!Задача. Фильтрация массива чисел!!
+
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+
+  // for (let i = 0; i < numbers.length; i += 1) {
+  //   if (numbers[i] > value) {
+  //     filteredNumbers.push(numbers[i]);
+  //   }
+  // }
+
+  numbers.forEach(function callback(number, index){
+    if (numbers[index] > value)
+    { filteredNumbers.push(numbers[index]); }
+  });
+ 
+
+  // Change code above this line
+  return filteredNumbers;
+}

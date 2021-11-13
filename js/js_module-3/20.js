@@ -24,4 +24,14 @@ function calculateTotalPrice(productName) {
 }
 console.log(calculateTotalPrice('Бластер'));
 console.log(calculateTotalPrice('Радар'));
-console.log(calculateTotalPrice('Дроид'));
+console.log(calculateTotalPrice('Дроид'));function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+ let totalPrice = 0;
+for(const product of products){
+if(product.name === productName){
+  totalPrice = product.price * product.quantity;
+}
+
+}return totalPrice;
+  // Пиши код выше этой строки
+}

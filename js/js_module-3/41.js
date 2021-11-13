@@ -19,13 +19,13 @@ const atTheOldToad = {
   getPotions() {
     return this.potions;
   },
-  addPotion(potionName) {
-   if (this.potions.includes(potionName)) {
-      return `Зелье ${potionName} уже есть в инвентаре!`;
+   addPotion(newPotion) {
+    for (const potion of this.potions) {
+      if (newPotion.name === potion.name) {
+        return `Error! Potion ${newPotion.name} is already in your inventory!`;
+      }
     }
-
-    this.potions.push(potionName);
-
+      this.potions.push(newPotion);
   },
   removePotion(potionName) {
     for (let i = 0; i < this.potions.length; i += 1) {
@@ -38,17 +38,17 @@ const atTheOldToad = {
       }
       
     }
-    return `Зелья ${potionName} нет в инвентаре!`;
+    return `Potion ${potionName} is not in inventory!`;
   },
   updatePotionName(oldName, newName) {
 
     for (let potion of this.potions) {
 
-      if (potion['name'] === oldName) {
-        potion['name'] = newName;
+      if (potion.name === oldName) {
+        potion.name = newName;
       }
     }
-    return `Зелья ${oldName} нет в инвентаре!`;
+    return `Potion ${oldName} is not in inventory!`;
   },
   // Пиши код выше этой строки
 };

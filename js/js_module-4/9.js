@@ -20,3 +20,16 @@ const pizzaPalaceMessage = pizzaPalaceComposer('Манго');
 
 const burgerShackComposer = composeMessage.bind(burgerShack);
 const burgerShackMessage = burgerShackComposer('Поли');
+
+// !!Неявный возврат!!
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// };
+// // Change code above this line
+
+// Change code below this line
+const calculateTotalPrice = (quantity, pricePerItem) => 
+  quantity * pricePerItem;
+;
+// Change code above this line

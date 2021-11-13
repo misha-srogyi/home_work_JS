@@ -21,3 +21,15 @@ function findMatches(arr, ...args) {
 }
 console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
 console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Change code below this line
+  orderedItems.forEach(function (element, index) {
+    totalPrice += index;
+  });
+ 
+
+  // Change code above this line
+  return totalPrice;
+}

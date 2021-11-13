@@ -12,4 +12,5 @@ function countTotalSalary(salaries) {
   return totalSalary;
 }
 
+
 console.table(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));

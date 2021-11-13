@@ -20,3 +20,21 @@ const pizzaPalace = {
   // Пиши код выше этой строки
 };
 console.log(pizzaPalace.order('Аль Копчино'));
+
+// !!Метод forEach(callback)!!
+
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Change code below this line
+  
+  //   for (let i = 0; i < orderedItems.length; i += 1) {
+  //   totalPrice += orderedItems[i];
+  // }
+
+orderedItems.forEach(function callback(element,index){
+  totalPrice += orderedItems[index];
+});
+  
+  // Change code above this line
+  return totalPrice;
+}

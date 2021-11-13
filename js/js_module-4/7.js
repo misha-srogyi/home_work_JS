@@ -32,3 +32,25 @@ for (let i = 0; i < orders.length; i+=1) {
 }
 
 console.log(messages);
+
+// !!Задача. Общие элементы!!
+// Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray, и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  // Change code below this line
+
+  // for (let i = 0; i < firstArray.length; i += 1) {
+  //   if (secondArray.includes(firstArray[i])) {
+  //     commonElements.push(firstArray[i]);
+  //   }
+  // }
+  firstArray.forEach(function callback(number,index){
+    if (secondArray.includes(firstArray[index])) {
+      commonElements.push(firstArray[index])
+     };
+  });
+
+  return commonElements;
+  // Change code above this line
+}

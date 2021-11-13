@@ -23,3 +23,16 @@ for (let i = 0; i < orders.length; i++) {
   const msg = composeMessage.apply(orders[i], [i + 1]);
   messages.push(msg);
 }
+
+
+// !!Стрелочные функции.!!
+// Change code below this line
+// function calculateTotalPrice(quantity, pricePerItem) {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
+
+const calculateTotalPrice=(quantity, pricePerItem)=> {
+  // Change code above this line
+  return quantity * pricePerItem;
+}
