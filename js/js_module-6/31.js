@@ -14,3 +14,5 @@ const totalAveragePlaytimePerGame = players.reduce((total, player) => { return t
 
 
 
+const totalAveragePlaytimePerGame = players.reduce((total,player)=>{ return total + player.playtime / player.gamesPlayed;
+});
