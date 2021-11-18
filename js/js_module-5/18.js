@@ -42,3 +42,29 @@ const mango = new Admin({
 
 console.log(mango.email); // mango@mail.com
 console.log(mango.accessLevel); // superuser
+
+// N2========
+
+// !!Наследование классов
+// В приложении нужен администратор с возможностью добавлять почты пользователей в чёрный список.
+
+// Объяви класс Admin, который наследует от класса User
+// Добавь классу Admin публичное статическое свойство AccessLevel (уровень доступа), значение которого это объект { BASIC: "basic", SUPERUSER: "superuser" }
+
+class User {
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+// Change code below this line
+class Admin extends User {
+  static AccessLevel = { BASIC: "basic", SUPERUSER: "superuser" };
+}
