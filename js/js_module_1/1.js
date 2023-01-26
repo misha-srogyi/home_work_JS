@@ -256,5 +256,25 @@
 
 // console.log(atTheOldToad.getPotions());
 // console.log(atTheOldToad.addPotion({ name: 'Невидимка', price: 620 }));
-console.log("4" + "8" - "6");
-console.log(4 + 8 - 6);
+//console.log("4" + "8" - "6");
+//console.log(4 + 8 - 6);
+
+var sillyString = "hEllO THERE,HOw ArE YOU DOiNg?";
+// const lowerString = sillyString.toLowerCase();
+// var firstCharacter = lowerString[0];
+// var firstCharacterUpper = firstCharacter.toUpperCase();
+// const restOfString = lowerString.slice(1);
+// var result = firstCharacterUpper + restOfString;
+// console.log(result);
+
+console.log(sillyString[0].toUpperCase() + sillyString.slice(1).toLowerCase()); 
+
+var circle = function (x, y, radius) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+    ctx.stroke();
+};
+ctx.lineWidth = 4;
+
+ctx.strokeStyle = 'Red';
+circle(100, 100, 10);
